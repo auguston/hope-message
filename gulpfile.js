@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 
 // 路徑
 var srcJade = 'template/**/*.jade',
-	endJade = 'web/',
+	endJade = './',
 	srcSass = ['assets/sass/**/*.sass', 'assets/sass/**/*.scss'],
 	endSass = 'assets/css/',
 	srcJs = 'assets/js/*.js',
