@@ -1,8 +1,8 @@
 // 頁面讀取中
 window.onload = function() {
     setTimeout(function() {
-        $('.js-loading-mask').addClass('is-remove');
-    }, 800);
+        $('.js-loading-mask').addClass('fadeOutUp').css('z-index', '-1');
+    }, 1500);
 };
 
 // 螢幕滑動時，大標題增加陰影

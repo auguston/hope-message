@@ -17,13 +17,13 @@
 			content: "年"
 
 	+phones
-		lost-column: 3/4
+		lost-column: 11/12
 
 		&:nth-child(odd)
-			lost-offset: 1/4
+			lost-offset: 1/12
 
 		&:nth-child(even)
-			lost-offset: -1/4
+			lost-offset: -1/12
 
 	> .title,
 	> .content,
@@ -57,10 +57,15 @@
 			padding-left: 8px
 			overflow: hidden
 			line-height: 50px
-			@extend %text-ellipsis
+			// @extend %text-ellipsis
 			small
 				padding-left: 8px
 				font-size: 50%
+			+phones
+				line-height: 25px
+				small
+					display: block
+					line-height: 25px
 
 	> .time
 		@extend ._textalignright

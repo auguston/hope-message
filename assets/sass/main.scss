@@ -16,6 +16,7 @@
 // 預設css3動畫
 @import '../vendor/animate/helpers/mixins';
 $use-fadeInUp: true;
+$use-fadeOutUp: true;
 @import '../vendor/animate/helpers/settings';
 @import '../vendor/animate/animate';
 
