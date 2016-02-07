@@ -32,9 +32,9 @@ $('.js-upright').click(function(e) {
 
 function icon() {
     if ($('.right-write').hasClass('show')) {
-        $('.material-icons').text('clear');
+        $('.js-upright > .material-icons').text('clear');
     } else {
-        $('.material-icons').text('add');
+        $('.js-upright > .material-icons').text('add');
     }
 }
 

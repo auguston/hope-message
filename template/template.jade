@@ -37,7 +37,7 @@ html
 			//- 左區域：留言list
 			section.left-list
 				header.top-header
-					h1._textaligncenter 新年許願池
+					h1._textaligncenter 新年新希望
 				//- .content-wrap
 				main#messagesDiv.content-wrap
 					block msg-list
@@ -64,8 +64,10 @@ html
 						textarea#messageInput.mdl-textfield__input(type="text", rows='3')
 						label.mdl-textfield__label(for="messageInput") 我的新希望是...
 					.send-btngroup
-						button.cancel.mdl-button.mdl-js-button.mdl-js-ripple-effect(type="button") 清除
-						button.submit.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type="submit") 許願
+						button.cancel.mdl-button.mdl-js-button.mdl-js-ripple-effect(type="button")
+							i.fa.fa-refresh
+						button.submit.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type="submit")
+							i.fa.fa-send
 					block msg-write
 					//- .footer
 					footer.bottom-footer
