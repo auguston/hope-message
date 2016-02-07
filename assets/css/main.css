@@ -1002,6 +1002,11 @@ body {
     .right-write .msg-write > .send-btngroup {
       margin-bottom: 16px;
       margin-bottom: 1rem; }
+      @media screen and (max-device-width: 480px) {
+        .right-write .msg-write > .title,
+        .right-write .msg-write > .content,
+        .right-write .msg-write > .send-btngroup {
+          margin-bottom: 0.5rem; } }
     .right-write .msg-write > .name > div > input,
     .right-write .msg-write > .name > div > button,
     .right-write .msg-write > .send-btngroup > div > input,
