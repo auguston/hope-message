@@ -1,0 +1,40 @@
+@import modules/msg-card
+
+.left-list
+	// padding-top = h1的高度 + 16px
+	padding-top: 64px
+	max-height: 100%
+	overflow-y: auto
+
+	> .top-header
+		lost-center: 63.65%
+		position: fixed
+		top: 0
+		z-index: 5
+		transition: $transition-default
+
+		&.-shadow
+			@extend %box-shadow-z1
+	
+	> .content-wrap
+		width: 100%
+		padding-right: 2rem
+		padding-left: 0.5rem
+	
+	+tablet
+		position: relative
+		z-index: 1
+		padding-bottom: 56px
+
+		> .top-header
+			lost-center: 100%
+			left: 0
+		
+		> .content-wrap
+			padding-right: 0.5rem
+
+.left-list
+
+	> .top-header
+		background-color: rgba(#B71C1C, .87)
+		@extend %colorwhite

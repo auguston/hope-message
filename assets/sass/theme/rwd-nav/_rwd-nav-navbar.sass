@@ -1,0 +1,57 @@
+// 引用相關設定的變數，要改變nav樣式，改變變數檔就可以了
+@import variables-nav
+
+.-rwdnav .nav-bar
+	padding: $desktop-padding
+	@extend .animated
+	> ul
+		padding-left: 0
+
+// 桌機版時
++desktop-normal
+	.-rwdnav .nav-bar
+		> ul
+			+list-inline
+			padding-right: 8px
+			padding-left: 8px
+			text-align: center
+			&.-right
+				text-align: right
+			&.-left
+				text-align: left
+		> ul > li > a
+			padding-right: $desktop-a-padding
+			padding-left: $desktop-a-padding
+			font-size: $desktop-a-size
+			color: $desktop-a-color
+			+link-hover
+				color: $desktop-a-active-color
+
+// pad版時
++tablet
+	.-rwdnav .nav-bar
+		position: fixed
+		z-index: 4
+		visibility: hidden
+		padding: 0
+		width: $tablet-width
+		min-height: 100%
+		overflow-y: auto
+		background-color: $tablet-bg-color
+		box-shadow: $tablet-box-shadow
+		&.-show
+			visibility: visible
+		> ul
+			position: absolute
+			width: 100%
+			list-style: none
+		> ul > li
+			border-bottom: $tablet-li-border-bottom
+		> ul > li > a
+			display: block
+			padding: $tablet-a-padding
+			text-align: $tablet-a-align
+			font-size: $tablet-a-size
+			color: $tablet-a-color
+			&:active
+				color: $tablet-a-active-color

@@ -1,0 +1,124 @@
+.right-write
+	position: relative
+	height: 100%
+	overflow: hidden
+	@extend %box-shadow-z1
+
+	> .ci-pic,
+	> .msg-write
+		lost-row: 1/2
+	
+	> .ci-pic
+		lost-align: center
+		@extend %padding16
+		
+		> img
+			@extend %padding16
+			@extend %img-responsive
+			height: 90%
+
+	.msg-write
+		@extend %padding16
+		height: 100%
+
+		> .title,
+		> .name,
+		> .content,
+		> .send-btngroup,
+		> .bottom-footer
+			width: 100%
+
+		> .title,
+		> .content,
+		> .send-btngroup
+			margin-bottom: 1rem
+
+		> .title
+			@extend ._textaligncenter
+
+		> .name,
+		> .send-btngroup
+			@extend %clearfix
+
+
+			> div > input,
+			> div > button
+				width: 100%
+
+			> .nameInput,
+			> .cancel
+				lost-column: 1/3
+
+			> .nicknameInput,
+			> .submit
+				lost-column: 2/3
+
+		> .send-btngroup
+			@extend %clearfix
+
+		> .bottom-footer
+			position: absolute
+			bottom: 8px
+			left: 0
+			@extend ._textaligncenter
+	
+	// 平板以下顯示為隱藏
+	+tablet
+		position: absolute
+		top: 100%
+		left: 0
+		z-index: 2
+		overflow: visible
+		background: #FFF
+		transition: $transition-default
+
+		&.show
+			top: 10%
+			> .js-upright
+				top: -28px
+				+box-shadow-z2
+			
+			> .msg-write > .bottom-footer
+				bottom: 10%
+
+		> .ci-pic
+			height: 25%
+		
+		> .msg-write
+			padding-bottom: 10%
+			height: 65%
+
+// right style
+.right-write
+	background-color: #B71C1C
+
+	> .msg-write
+
+		> .title > h2
+			@extend %colorwhite
+
+		> .name,
+		> .content
+
+			label
+				color: rgba(#FFEB3B, .87)
+
+			input,
+			textarea
+				@extend %colorwhite
+				border-bottom: 1px dashed rgba(#FFEB3B, .87)
+
+		> .bottom-footer
+			@extend %colorwhite
+
+// 按鈕
+.js-upright
+	display: none
+	transition: $transition-default
+
+	+tablet
+		display: block
+		position: absolute
+		right: 8px
+		top: -64px
+		z-index: 3

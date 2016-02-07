@@ -1,0 +1,41 @@
+.top-header
+	@extend %clearfix
+	width: 100%
+	background-color: #FFF
+	@extend .animated
+	@extend .fadeInDown
+	> .pic img
+		@extend %img-responsive
+
++desktop-normal
+	.top-header
+		> .btn
+			display: none
+		> .pic
+			lost-column: 1/12
+		> .name
+			lost-column: 11/12
+
++tablet
+	.top-header
+		position: fixed
+		z-index: 2
+		max-height: 58px
+		padding-top: 4px
+		padding-bottom: 4px
+		overflow: hidden
+		box-shadow: $z1
+		> .btn
+			display: block
+			position: fixed
+			top: 0
+			left: 8px
+		> .pic
+			lost-column: 1/1
+		> .pic img
+			@extend ._marginauto
+			max-height: 50px
+		> .name
+			display: none
+			> h1
+				@extend ._textaligncenter
