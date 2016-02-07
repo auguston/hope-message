@@ -1,3 +1,10 @@
+// 頁面讀取中
+window.onload = function() {
+    setTimeout(function() {
+        $('.js-loading-mask').addClass('is-remove');
+    }, 800);
+};
+
 // 螢幕滑動時，大標題增加陰影
 $(function() {
     $('.left-list').scroll(function() {
@@ -55,24 +62,24 @@ $('#message').submit(function(e) {
     var time = d.getFullYear() + '/' + (('' + month).length < 2 ? '0' : '') + month + '/' + (('' + day).length < 2 ? '0' : '') + day + '  ' + (('' + hours).length < 2 ? '0' : '') + hours + ':' + (('' + minutes).length < 2 ? '0' : '') + minutes;
 
     // 欄位有空白就跳出提示窗
-    if($('#nameInput, #nicknameInput, #messageInput').val() == "") {
-    	alert('欄位皆為必填喔！');
-    	return false;
+    if ($('#nameInput, #nicknameInput, #messageInput').val() == "") {
+        alert('欄位皆為必填喔！');
+        return false;
     }
 
     // 填寫欄位則寫進資料庫
     else {
-    	$('.refresh-wrap').addClass('-show');
-    	setTimeout(function() {
-    		$('.refresh-wrap').removeClass('-show');
-    		myDataRef.push({
-    		    name: name,
-    		    nick: nick,
-    		    text: text,
-    		    time: time
-    		});
-    		$('#nameInput, #nicknameInput, #messageInput').val('');
-    	}, 2000);
+        $('.refresh-wrap').addClass('-show');
+        setTimeout(function() {
+            $('.refresh-wrap').removeClass('-show');
+            myDataRef.push({
+                name: name,
+                nick: nick,
+                text: text,
+                time: time
+            });
+            $('#nameInput, #nicknameInput, #messageInput').val('');
+        }, 2000);
     }
 });
 

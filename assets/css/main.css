@@ -616,7 +616,8 @@ img._marginauto, .top-header > .pic img, ._marginauto, .top-header > .pic img {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #F4F4F4;
+  background-color: #b71c1c;
+  background-color: rgba(183, 28, 28, 0.87);
   top: 0;
   height: 100%;
   transition: all 1s;
@@ -643,17 +644,17 @@ img._marginauto, .top-header > .pic img, ._marginauto, .top-header > .pic img {
 .loading-0 {
   -webkit-animation: bounce 1s infinite ease;
   -webkit-animation-delay: .1s;
-  background: #F44336; }
+  background: #FF9800; }
 
 .loading-1 {
   -webkit-animation: bounce 1s infinite ease;
   -webkit-animation-delay: .3s;
-  background: #4CAF50; }
+  background: #FFC107; }
 
 .loading-2 {
   -webkit-animation: bounce 1s infinite ease;
   -webkit-animation-delay: .5s;
-  background: #2196F3; }
+  background: #FFEB3B; }
 
 @-webkit-keyframes bounce {
   0%, 100% {
