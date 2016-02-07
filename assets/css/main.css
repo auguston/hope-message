@@ -548,7 +548,7 @@ hr {
 ._textalignleft {
   text-align: left; }
 
-._textaligncenter, .right-write .msg-write > .title, .right-write .msg-write > .bottom-footer, .top-header > .name > h1 {
+._textaligncenter, .left-list > .top-header, .right-write .msg-write > .title, .right-write .msg-write > .bottom-footer, .top-header > .name > h1 {
   text-align: center; }
 
 ._textalignright, .msg-card > .time {
@@ -879,6 +879,13 @@ body {
   content: '';
   display: table;
   clear: both; }
+    .left-list > .top-header > h1 > .fb-like {
+      position: absolute;
+      top: -14px;
+      right: 8px; }
+      @media screen and (max-device-width: 480px) {
+        .left-list > .top-header > h1 > .fb-like {
+          top: -8px; } }
   .left-list > .content-wrap {
     width: 100%;
     padding-right: 32px;

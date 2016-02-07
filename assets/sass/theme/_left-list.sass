@@ -11,10 +11,18 @@
 		position: fixed
 		top: 0
 		z-index: 5
+		@extend ._textaligncenter
 		transition: $transition-default
 
 		&.-shadow
 			@extend %box-shadow-z1
+
+		> h1 > .fb-like
+			position: absolute
+			top: -14px
+			right: 8px
+			+phones
+				top: -8px
 	
 	> .content-wrap
 		width: 100%

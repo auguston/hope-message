@@ -13,6 +13,7 @@ html
 		meta(charset="utf-8")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
 		meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
+		meta(property="og:image", content="http://img.zcool.cn/community/03369915653cd8932f87512f68411bf.jpg")
 		script(src="assets/vendor/modernizr.js")
 
 		//- firebase
@@ -29,6 +30,17 @@ html
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
 		<script src="assets/vendor/modernizr.js"></script>
 		<![endif]-->
+
+		//- fb
+		#fb-root
+		script.
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.5&appId=1524010074531895";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
 	body
 		.js-loading-mask.loading-mask
 			div(class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active")
@@ -37,7 +49,8 @@ html
 			//- 左區域：留言list
 			section.left-list
 				header.top-header
-					h1._textaligncenter 新年新希望
+					h1 新年新希望
+						.fb-like(data-href="http://evilkim25.github.io/hope-message/index.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false")
 				//- .content-wrap
 				main#messagesDiv.content-wrap
 					block msg-list
