@@ -1,0 +1,76 @@
+doctype
+block config
+	include partials/_config
+html
+	head
+		title #{pageTitle}
+
+		//- description 用 block prepend meta-tags
+		meta(
+			name="description"
+			content=description
+		)
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
+		meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
+		script(src="/assets/vendor/modernizr.js")
+
+		//- firebase
+		script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
+		
+		//- 要額外引用的css，用block prepend 或 append link引用
+		block link-tags
+			link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+			link(rel="stylesheet", href="https://code.getmdl.io/1.1.1/material.yellow-amber.min.css")
+			link(href="/assets/vendor/font-awesome/css/font-awesome.min.css", rel="stylesheet")
+			link(href="/assets/css/main.css", rel="stylesheet")
+
+		<!--[if lt IE 9]>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+		<script src="/assets/vendor/modernizr.js"></script>
+		<![endif]-->
+	body
+		//- .container-wrap
+		.container-wrap
+			//- 左區域：留言list
+			section.left-list
+				header.top-header
+					h1._textaligncenter 新年許願池
+				//- .content-wrap
+				main#messagesDiv.content-wrap
+					block msg-list
+			//- 右區域：形象 + 填寫留言
+			section.right-write
+				//- 按鈕
+				button.js-upright.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored
+					i.material-icons
+				//- .ci-pic 節日形象圖
+				section.ci-pic
+					img(src="../assets/img/ci-pic.png", alt="猴年")
+				//- .msg-write 填寫留言
+				form#message.msg-write
+					.title
+						h2 / 我要許願 /
+					.name
+						.nameInput.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+							input#nameInput.mdl-textfield__input(type="text")
+							label.mdl-textfield__label(for="nameInput") 大名
+						.nicknameInput.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+							input#nicknameInput.mdl-textfield__input(type="text")
+							label.mdl-textfield__label(for="nicknameInput") 江湖稱號
+					.content.mdl-textfield.mdl-js-textfield
+						textarea#messageInput.mdl-textfield__input(type="text", rows='3')
+						label.mdl-textfield__label(for="messageInput") 我的新希望是...
+					.send-btngroup
+						button.cancel.mdl-button.mdl-js-button.mdl-js-ripple-effect(type="button") 清除
+						button.submit.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type="submit") 許願
+					block msg-write
+					//- .footer
+					footer.bottom-footer
+						h6 © Sean Su 版權所有 2016
+		.refresh-wrap
+			.content
+				i.fa.fa-3x.fa-spinner.fa-spin
+		//- js
+		include partials/_js
+		block js

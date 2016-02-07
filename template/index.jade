@@ -1,0 +1,20 @@
+extends template
+
+//- 修改網頁標題、描述
+block config
+	- var pageTitle = '新年許願版'
+	- var description = '由 Sean Su 製作的新年留言網頁'
+
+block msg-list
+	mixin list
+		.msg-card
+			.title
+				.pic
+				h3.name Sean
+					small 打小就老實憨厚
+			.content
+				p 祝大家新年快樂！
+			.time
+				time 2015-02-03 19:00
+
+block msg-write

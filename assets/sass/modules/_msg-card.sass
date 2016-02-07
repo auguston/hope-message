@@ -1,0 +1,72 @@
+.msg-card
+	lost-column: 2/3
+	@extend %clearfix
+	margin-bottom: 16px
+	@extend %padding16
+	border-radius: 16px
+	@extend %box-shadow-z1
+
+	&:nth-child(odd)
+		lost-offset: 1/3
+		> .title > .pic::after
+			content: "猴"
+
+	&:nth-child(even)
+		lost-offset: -1/3
+		> .title > .pic::after
+			content: "年"
+
+	+phones
+		lost-column: 3/4
+
+		&:nth-child(odd)
+			lost-offset: 1/4
+
+		&:nth-child(even)
+			lost-offset: -1/4
+
+	> .title,
+	> .content,
+	> .time
+		lost-row: 1/3
+
+// style
+.msg-card
+	background-color: #FFF8E1
+	opacity: 0
+	@extend .animated
+	transition: $transition-default;
+
+	> .title
+		@extend %clearfix
+
+		> .pic
+			lost-align: center
+			float: left
+			+size(50px, 50px)
+			background-color: #FF9800
+			border-radius: 50px
+			&::after
+				content: ''
+				display: block
+				line-height: 50px
+				text-align: center
+				font-size: 2rem
+
+		> .name
+			padding-left: 8px
+			overflow: hidden
+			line-height: 50px
+			@extend %text-ellipsis
+			small
+				padding-left: 8px
+				font-size: 50%
+
+	> .time
+		@extend ._textalignright
+		> time
+			@extend h6
+
+	> .content
+		// padding-left = .pic寬度 ＋ .name的padding-left
+		padding-left: 58px

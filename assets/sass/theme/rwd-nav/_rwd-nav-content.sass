@@ -1,0 +1,25 @@
+body
+	// nav 出現時，背景禁止滑動
+	&.hidden
+		overflow: hidden
+.container-wrap
+	+tablet
+		&.-rwdnav
+			// 移除.container-wrap原有的左右padding
+			padding-right: 0;
+			padding-left: 0;
+			> .content-wrap
+				// 行動裝置，增加header + 導覽列高度的padding-top
+				padding-top: 60px
+
+// 導覽列出現時變黑
+.black-wrap
+	position: fixed 0
+	z-index: 3
+	visibility: hidden
+	overflow: hidden
+	+size(100%, 100%)
+	background-color: rgba(black, $opacity-sm)
+	@extend .animated
+	&.-show
+		visibility: visible

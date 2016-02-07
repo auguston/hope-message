@@ -1,0 +1,121 @@
+@import normalize
+
+// 內文、標題等的文字設定
+*, *::before, *::after
+	box-sizing: border-box
+body
+	letter-spacing: .08rem
+	color: rgba(#555, $opacity-sm)
+	font-weight: normal
+	vertical-align: middle
+	font-family: $font-family-sans-serif
+
+
+
+
+
+// 消除瀏覽器預設margin，設定全站為黑體字
+h1, h2, h3, h4, h5, h6, th,
+p, a, ul, ol, li, td, dl, dt, dd, input, button
+	margin-top: 0
+	margin-bottom: 0
+	font-family: $font-family-sans-serif
+
+
+
+
+
+// 標題的字型大小參照material design
+$h1: 2.125rem
+$h2: 1.5rem
+$h3: 1.25rem
+$p: 1rem
+$h-min: 0.2rem
+%font-range
+	font-range: 480px 960px
+
+h1
+	// 34px
+	font-size: responsive ($h1 - $h-min) $h1
+	@extend %font-range
+	font-weight: 300
+h2
+	// 24px
+	font-size: responsive ($h2 - $h-min) $h2
+	@extend %font-range
+	font-weight: 400
+h3, th
+	// 20px
+	font-size: responsive ($h3 - $h-min) $h3
+	@extend %font-range
+	font-weight: 400
+h4
+	// 16px
+	font-size: 1rem
+	font-weight: 400
+h5
+	// 14px
+	font-size: 0.875rem
+	font-weight: 400
+h6
+	// 12px
+	font-size: 0.75rem
+	font-weight: 500
+p, a, li, td, dd, input, button
+	font-size: responsive ($p - $h-min) $p
+	@extend %font-range
+	font-weight: normal
+
+
+
+
+
+// 將line設定為24px、48px兩種
+h1, h2
+	line-height: $base-line-height * 2
+h3, h4, h5, h6,
+p, a, ul, ol, li, td, dl, dt, dd, input, button
+	line-height: $base-line-height
+
+
+
+
+
+// 設定字體粗細
+a
+	color: $a-link-color
+	+link-hover
+		color: $a-hover-color
+		text-decoration: none
+
+
+
+
+
+// table設定
+table, th, tr, td
+	border: $table-border
+table
+	width: 100%
+th, td
+	padding: $table-padding-vertical $table-padding-horizontal
+th
+	text-align: center
+
+
+
+
+
+// form設定
+input
+	outline: none
+
+
+
+
+
+// hr設定
+hr
+	margin: 11px 2rem 12px
+	border: 0
+	border-top: 1px solid rgba(#CCC, $opacity-md)

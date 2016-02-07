@@ -1,0 +1,47 @@
+@import 'helper/variables';
+@import 'helper/mixins';
+@import 'helper/media';
+@import 'helper/base';
+@import 'helper/helper';
+
+// lost gird
+@import 'theme/lost-layout';
+
+// modules
+@import 'modules/loading-mask';
+@import 'modules/btn';
+@import 'modules/iframe-responsive';
+@import 'modules/table-responsive';
+
+// 預設css3動畫
+@import '../vendor/animate/helpers/mixins';
+$use-fadeInUp: true;
+@import '../vendor/animate/helpers/settings';
+@import '../vendor/animate/animate';
+
+@import 'theme/*';
+
+body {
+	@extend %clearfix;
+	background-color: #F44336;
+}
+
+.refresh-wrap {
+	position: absolute 0;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(#B71C1C, .87);
+	opacity: 0;
+	transition: $transition-default;
+	> .content {
+		lost-align: center;
+		height: 100%;
+		width: 100%;
+		color: rgba(#FFEB3B, .87);
+	}
+	&.-show {
+		z-index: 10;
+		opacity: 1;
+	}
+}
