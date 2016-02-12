@@ -91,6 +91,9 @@ myDataRef.on('child_added', function(snapshot) {
 
 //貼上資料到目標地
 function displayChatMessage(name, nick, text, time) {
+    if(text.indexOf('script') >= 0) {
+    }
+    else {
     var main = $('#messagesDiv')
         .prepend('<div class="msg-card">' +
             '<div class="title">' +
@@ -104,6 +107,7 @@ function displayChatMessage(name, nick, text, time) {
             '<time>' + time + '</time>' +
             '</div>' +
             '</div>');
+    }
     $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
 
     // 卡片漸出
