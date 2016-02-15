@@ -91,9 +91,6 @@ myDataRef.on('child_added', function(snapshot) {
 
 //貼上資料到目標地
 function displayChatMessage(name, nick, text, time) {
-    if(text.indexOf('script') >= 0) {
-    }
-    else {
     var main = $('#messagesDiv')
         .prepend('<div class="msg-card">' +
             '<div class="title">' +
@@ -101,13 +98,12 @@ function displayChatMessage(name, nick, text, time) {
             '<h3 class="name">' + name + '<small>' + nick + '</small></h3>' +
             '</div>' +
             '<div class="content">' +
-            '<p>' + text + '</p>' +
+            '<p class="js-check">' + escapeHtml(text) + '</p>' +
             '</div>' +
             '<div class="time">' +
             '<time>' + time + '</time>' +
             '</div>' +
             '</div>');
-    }
     $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
 
     // 卡片漸出
@@ -122,4 +118,20 @@ function displayChatMessage(name, nick, text, time) {
     for (var i = 0; i <= card.length; i++) {
         show(i);
     }
+}
+
+// 替換html標籤用
+var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+};
+
+function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function(s) {
+        return entityMap[s];
+    });
 }

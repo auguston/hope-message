@@ -4,9 +4,10 @@
 連結：<http://evilkim25.github.io/hope-message/index.html>
 
 運用技術：
-*gulp
-*postcss
-*lost grid
-*firebase database
-*jquery
-*material design lite
+
+* gulp
+* postcss
+* lost gri
+* firebase database
+* jquery
+* material design lite

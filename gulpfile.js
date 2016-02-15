@@ -11,6 +11,8 @@ var gulp = require('gulp'),
 	rucksack = require('rucksack-css'),
 	// 整個sass資料夾import
 	bulkSass = require('gulp-sass-bulk-import'),
+	// markdown
+	markdown = require('gulp-markdown'),
 	// 偵錯工具
 	plumber = require('gulp-plumber'),
 	notify = require("gulp-notify"),
@@ -20,11 +22,13 @@ var gulp = require('gulp'),
 
 // 路徑
 var srcJade = 'template/**/*.jade',
-	endJade = './',
+	endJade = 'web/',
 	srcSass = ['assets/sass/**/*.sass', 'assets/sass/**/*.scss'],
 	endSass = 'assets/css/',
 	srcJs = 'assets/js/*.js',
 	endJs = 'assets/js/min/';
+	srcMark = './*.md';
+	endMark = './';
 
 // webServer網址
 var serverSite = 'admindemacbook-air.local';
@@ -97,6 +101,17 @@ gulp.task('compress', function(){
 		}));
 });
 
+// markdown
+gulp.task('markdown', function() {
+	return gulp.src(srcMark)
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+		.pipe(markdown())
+		.pipe(gulp.dest(endMark))
+		.pipe(notify({
+			message: 'Markdown Success'
+		}));
+});
+
 // 監聽
 gulp.task('watch', function(){
 	/* 
@@ -107,6 +122,7 @@ gulp.task('watch', function(){
 	gulp.watch(srcJade, ['template']);
 	gulp.watch(srcSass, ['styles']);
 	gulp.watch(srcJs, ['compress']);
+	gulp.watch(srcMark, ['markdown'])
 });
 
 // server
@@ -120,4 +136,4 @@ gulp.task('webServer', function() {
 });
 
 // cmd輸入"gulp"時，要執行的task
-gulp.task('default', ['webServer', 'template', 'styles', 'compress', 'watch']);
+gulp.task('default', ['webServer', 'template', 'styles', 'markdown', 'compress', 'watch']);
