@@ -111,11 +111,11 @@ function displayChatMessage(name, nick, text, time) {
 
     function show(i) {
         setTimeout(function() {
-            $('.msg-card:nth-child(' + i + ')').addClass('fadeInUp');
+            $('.msg-card:nth-child(' + i + ')').addClass('flipInY');
         }, i * 300);
     }
 
-    for (var i = 0; i <= card.length; i++) {
+    for (var i = 0, len = card.length; i <= len; i++) {
         show(i);
     }
 }
