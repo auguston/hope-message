@@ -111,7 +111,7 @@ function displayChatMessage(name, nick, text, time) {
 
     function show(i) {
         setTimeout(function() {
-            $('.msg-card:nth-child(' + i + ')').addClass('flipInY');
+            $('.msg-card:nth-child(' + i + ')').addClass('fadeInUp');
         }, i * 300);
     }
 
